@@ -33,16 +33,18 @@ const currentPath = Astro.url.pathname;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Preconnect to external origins (improves FCP/LCP) -->
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
 
-    <!-- Preload LCP hero image -->
+    <!-- Preload LCP hero image (local, served from edge) -->
     <link
       rel="preload"
       as="image"
-      href="https://images.unsplash.com/photo-1689793592282-015d9db77917?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvaWwlMjBidXJuZXIlMjBoZWF0aW5nJTIwc3lzdGVtfGVufDF8fHx8MTc2ODQ2NTA3OHww&ixlib=rb-4.1.0&q=80&w=1920"
+      type="image/webp"
+      href="/images/hero-bg.webp"
+      imagesrcset="/images/hero-bg-1024.webp 1024w, /images/hero-bg.webp 1920w"
+      imagesizes="100vw"
       fetchpriority="high"
     />
 
