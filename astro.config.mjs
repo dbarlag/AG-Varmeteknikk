@@ -21,6 +21,10 @@ export default defineConfig({
       },
     },
     build: {
+      // Enable modulepreload polyfill for better module loading
+      modulePreload: {
+        polyfill: true,
+      },
       // Optimize chunk splitting for better caching
       rollupOptions: {
         output: {

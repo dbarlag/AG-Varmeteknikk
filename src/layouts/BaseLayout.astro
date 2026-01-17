@@ -1,7 +1,7 @@
 ---
 import '@/styles/global.css';
 import SEOHead from '@/components/astro/SEOHead.astro';
-import { Header } from '@/components/react/Header';
+import Header from '@/components/astro/Header.astro';
 import Footer from '@/components/astro/Footer.astro';
 
 interface Props {
@@ -76,7 +76,7 @@ const currentPath = Astro.url.pathname;
     />
   </head>
   <body class="bg-background text-foreground antialiased">
-    <Header client:idle currentPath={currentPath} />
+    <Header currentPath={currentPath} />
     <main>
       <slot />
     </main>

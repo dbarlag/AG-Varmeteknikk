@@ -1,0 +1,223 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+---
+
+<header
+  id="main-header"
+  class="fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-white/5 backdrop-blur-md border-b border-white/10"
+>
+  <nav class="max-w-7xl mx-auto px-6 py-4" role="navigation" aria-label="Main navigation">
+    <div class="flex items-center justify-between">
+      <a
+        href="/"
+        class="header-logo text-2xl font-bold transition-colors duration-300 text-white hover:text-white/80"
+        aria-label="AG Varmeteknikk - Hjem"
+      >
+        AG<span class="header-logo-dot text-white/60" aria-hidden="true">•</span>Varme
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a
+          href="/tjenester"
+          class="nav-link transition-colors duration-300 text-sm font-medium text-white/90 hover:text-white"
+        >
+          Tjenester
+        </a>
+        <a
+          href="/om-oss"
+          class="nav-link transition-colors duration-300 text-sm font-medium text-white/90 hover:text-white"
+        >
+          Om oss
+        </a>
+        <a
+          href="/kontakt"
+          class="nav-link transition-colors duration-300 text-sm font-medium text-white/90 hover:text-white"
+        >
+          Kontakt
+        </a>
+        <a
+          href="tel:40213090"
+          class="px-6 py-2.5 bg-gradient-to-r from-brand-blue to-brand-blue-dark text-white rounded-full hover:shadow-lg hover:shadow-brand-blue/30 transition-all duration-300 flex items-center gap-2 text-sm font-semibold hover:scale-[1.02]"
+          aria-label="Ring oss på 40 21 30 90"
+        >
+          <!-- Phone Icon (inline SVG) -->
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>40 21 30 90</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="mobile-menu-btn md:hidden p-2 transition-colors duration-300 rounded-lg text-white hover:text-white/80 hover:bg-white/10"
+        aria-label="Åpne meny"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <!-- Menu Icon -->
+        <svg class="menu-icon w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" x2="20" y1="12" y2="12"/>
+          <line x1="4" x2="20" y1="6" y2="6"/>
+          <line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+        <!-- Close Icon -->
+        <svg class="close-icon w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div
+      id="mobile-menu"
+      class="mobile-menu md:hidden hidden pt-6 pb-4 space-y-4"
+    >
+      <a
+        href="/tjenester"
+        class="mobile-nav-link block transition-colors duration-300 py-2 font-medium text-white/90 hover:text-white"
+      >
+        Tjenester
+      </a>
+      <a
+        href="/om-oss"
+        class="mobile-nav-link block transition-colors duration-300 py-2 font-medium text-white/90 hover:text-white"
+      >
+        Om oss
+      </a>
+      <a
+        href="/kontakt"
+        class="mobile-nav-link block transition-colors duration-300 py-2 font-medium text-white/90 hover:text-white"
+      >
+        Kontakt
+      </a>
+      <a
+        href="tel:40213090"
+        class="w-full px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-blue-dark text-white rounded-full hover:shadow-lg hover:shadow-brand-blue/30 transition-shadow duration-300 flex items-center justify-center gap-2 font-semibold"
+        aria-label="Ring akutt på 40 21 30 90"
+      >
+        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span>Ring akutt</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<style is:global>
+  /* Scrolled state styles */
+  #main-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(229, 229, 229, 0.5);
+  }
+
+  #main-header.scrolled .header-logo {
+    color: #1e3a5f;
+  }
+  #main-header.scrolled .header-logo:hover {
+    color: #2563eb;
+  }
+
+  #main-header.scrolled .header-logo-dot {
+    color: #2563eb;
+  }
+
+  #main-header.scrolled .nav-link {
+    color: #404040;
+  }
+  #main-header.scrolled .nav-link:hover {
+    color: #2563eb;
+  }
+
+  #main-header.scrolled .mobile-menu-btn {
+    color: #1e3a5f;
+  }
+  #main-header.scrolled .mobile-menu-btn:hover {
+    color: #2563eb;
+    background-color: #f5f5f5;
+  }
+
+  #main-header.scrolled .mobile-nav-link {
+    color: #404040;
+  }
+  #main-header.scrolled .mobile-nav-link:hover {
+    color: #2563eb;
+  }
+
+  /* Mobile menu open state (when not scrolled) */
+  .mobile-menu:not(.scrolled-menu) {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+</style>
+
+<script>
+  // Minimal inline JS for header functionality
+  const header = document.getElementById('main-header');
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = menuBtn?.querySelector('.menu-icon');
+  const closeIcon = menuBtn?.querySelector('.close-icon');
+
+  let isMenuOpen = false;
+  let ticking = false;
+
+  // Scroll handler with requestAnimationFrame
+  function handleScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 50) {
+          header?.classList.add('scrolled');
+          mobileMenu?.classList.add('scrolled-menu');
+        } else {
+          header?.classList.remove('scrolled');
+          mobileMenu?.classList.remove('scrolled-menu');
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  // Mobile menu toggle
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    mobileMenu?.classList.toggle('hidden', !isMenuOpen);
+    menuIcon?.classList.toggle('hidden', isMenuOpen);
+    closeIcon?.classList.toggle('hidden', !isMenuOpen);
+    menuBtn?.setAttribute('aria-expanded', String(isMenuOpen));
+    menuBtn?.setAttribute('aria-label', isMenuOpen ? 'Lukk meny' : 'Åpne meny');
+  }
+
+  // Event listeners
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  menuBtn?.addEventListener('click', toggleMenu);
+
+  // Close menu on link click
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (isMenuOpen) toggleMenu();
+    });
+  });
+
+  // Initial scroll check
+  handleScroll();
+</script>
