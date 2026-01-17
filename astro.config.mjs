@@ -13,6 +13,10 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: 'viewport',
   },
+  build: {
+    // Inline CSS directly into HTML to eliminate render-blocking CSS request
+    inlineStylesheets: 'always',
+  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
