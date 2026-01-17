@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { Hero } from '@/components/react/Hero';
+import Hero from '@/components/astro/Hero.astro';
 import { Stats } from '@/components/react/Stats';
 import { BentoServices } from '@/components/react/BentoServices';
 import { WhyChooseUs } from '@/components/react/WhyChooseUs';
@@ -41,7 +41,7 @@ const organizationStructuredData = {
   keywords="oljefyr, oljefyrservice, oljebrenner, vedlikehold, service, oppgradering, døgnåpen service, AG Varmeteknikk, Norge"
   structuredData={organizationStructuredData}
 >
-  <Hero client:idle />
+  <Hero />
   <Stats client:visible />
   <BentoServices client:visible />
   <WhyChooseUs client:visible />
