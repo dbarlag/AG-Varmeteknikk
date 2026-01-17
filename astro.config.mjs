@@ -9,11 +9,26 @@ export default defineConfig({
     react(),
     sitemap(),
   ],
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
       alias: {
         '@': '/src',
+      },
+    },
+    build: {
+      // Optimize chunk splitting for better caching
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom'],
+            'motion': ['motion'],
+          },
+        },
       },
     },
   },
