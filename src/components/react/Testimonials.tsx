@@ -64,7 +64,7 @@ export function Testimonials() {
 
               <div className="relative z-10">
                 <Quote className="w-10 h-10 text-brand-blue mb-4 opacity-20" aria-hidden="true" />
-                <div className="flex gap-1 mb-4" aria-label={`Vurdering: ${testimonial.rating} av 5 stjerner`}>
+                <div className="flex gap-1 mb-4" role="img" aria-label={`Vurdering: ${testimonial.rating} av 5 stjerner`}>
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-warning text-warning" aria-hidden="true" />
                   ))}
