@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  keywords: string;
+  ogType: string;
+  ogImage: string;
+  structuredData?: object;
+}
+
+const { title, description, keywords, ogType, ogImage, structuredData } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const imageUrl = new URL(ogImage, Astro.site).toString();
+---
+
+<title>{title}</title>
+
+<!-- Basic Meta Tags -->
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="Norwegian" />
+<meta name="author" content="AG Varmeteknikk" />
+<meta name="theme-color" content="#2563eb" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content="AG Varmeteknikk" />
+<meta property="og:locale" content="nb_NO" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<!-- Structured Data (JSON-LD) -->
+{structuredData && (
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+)}

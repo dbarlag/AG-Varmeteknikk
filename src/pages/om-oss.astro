@@ -1,0 +1,16 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { About } from '@/components/react/About';
+import { CaseStudies } from '@/components/react/CaseStudies';
+---
+
+<BaseLayout
+  title="Om Oss - AG Varmeteknikk | Din Pålitelige Oljefyrpartner"
+  description="Med over 15 års erfaring leverer AG Varmeteknikk førsteklasses service på oljefyringsanlegg. Sertifiserte teknikere, døgnåpen service og fokus på kvalitet."
+  keywords="om AG Varmeteknikk, erfaring oljefyr, sertifisert tekniker, pålitelig service, Norge"
+>
+  <div class="pt-24">
+    <About client:visible />
+    <CaseStudies client:visible />
+  </div>
+</BaseLayout>

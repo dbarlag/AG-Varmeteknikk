@@ -1,0 +1,125 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+}
+
+const { article } = Astro.props;
+const { title, description, category, readTime, date, author } = article.data;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": date,
+  "author": {
+    "@type": "Organization",
+    "name": author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AG Varmeteknikk",
+    "url": "https://agvarmeteknikk.no"
+  }
+};
+
+const formattedDate = new Date(date).toLocaleDateString('nb-NO', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<BaseLayout
+  title={`${title} - AG Varmeteknikk`}
+  description={description}
+  keywords={`${category}, oljefyr, biofyringsolje, AG Varmeteknikk`}
+  ogType="article"
+  structuredData={structuredData}
+>
+  <div class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-zinc-900 via-black to-zinc-900 text-white py-20 px-6 pt-32">
+      <div class="max-w-4xl mx-auto">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-zinc-300 hover:text-white transition-colors mb-8"
+        >
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 19-7-7 7-7"></path>
+            <path d="M19 12H5"></path>
+          </svg>
+          Tilbake til forsiden
+        </a>
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="px-4 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-full">
+            {category}
+          </span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          {title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-6 text-zinc-300">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>{author}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+              <line x1="16" x2="16" y1="2" y2="6"></line>
+              <line x1="8" x2="8" y1="2" y2="6"></line>
+              <line x1="3" x2="21" y1="10" y2="10"></line>
+            </svg>
+            <time datetime={date}>{formattedDate}</time>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>{readTime} lesetid</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-16 px-6">
+      <div class="max-w-3xl mx-auto prose prose-lg prose-zinc">
+        <slot />
+      </div>
+    </article>
+
+    <!-- Related Articles CTA -->
+    <section class="bg-zinc-50 py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          Utforsk flere <span class="text-blue-600">artikler</span>
+        </h2>
+        <p class="text-zinc-600 mb-8 text-lg">
+          Les mer om oljefyr, biofyringsolje, tanktjenester og vedlikehold
+        </p>
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-medium"
+        >
+          Se alle artikler
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { ServicesUnified } from '@/components/react/ServicesUnified';
+import { TechnicalGuides } from '@/components/react/TechnicalGuides';
+import { FAQ } from '@/components/react/FAQ';
+---
+
+<BaseLayout
+  title="Tjenester - AG Varmeteknikk | Service, Tanktjenester og Biobrensel"
+  description="Komplett tjenesteoversikt: oljefyrservice, vedlikehold, tanktjenester og miljøvennlig biobrensel. Alt du trenger for ditt oljefyringsanlegg."
+  keywords="oljefyrservice, vedlikehold, tanktjenester, biobrensel, reparasjon, oppgradering, Norge"
+>
+  <div class="pt-24">
+    <ServicesUnified client:load />
+    <TechnicalGuides client:visible />
+    <FAQ client:visible />
+  </div>
+</BaseLayout>

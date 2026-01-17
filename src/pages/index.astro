@@ -1,0 +1,51 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Hero } from '@/components/react/Hero';
+import { Stats } from '@/components/react/Stats';
+import { BentoServices } from '@/components/react/BentoServices';
+import { WhyChooseUs } from '@/components/react/WhyChooseUs';
+import { Testimonials } from '@/components/react/Testimonials';
+import { ArticleSection } from '@/components/react/ArticleSection';
+import { FAQ } from '@/components/react/FAQ';
+
+const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AG Varmeteknikk",
+  "description": "Spesialister på service, vedlikehold og oppgradering av oljefyringsanlegg",
+  "url": "https://agvarmeteknikk.no",
+  "telephone": "+47-40-21-30-90",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "NO",
+    "addressLocality": "Norge"
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "priceRange": "$$",
+  "image": "/og-image.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "100"
+  },
+  "serviceArea": {
+    "@type": "Country",
+    "name": "Norge"
+  }
+};
+---
+
+<BaseLayout
+  title="AG Varmeteknikk - Oljefyrservice og Vedlikehold i Norge"
+  description="Spesialister på service, vedlikehold og oppgradering av oljefyringsanlegg. Over 15 års erfaring med døgnåpen service 24/7. Ring 40 21 30 90."
+  keywords="oljefyr, oljefyrservice, oljebrenner, vedlikehold, service, oppgradering, døgnåpen service, AG Varmeteknikk, Norge"
+  structuredData={organizationStructuredData}
+>
+  <Hero client:load />
+  <Stats client:visible />
+  <BentoServices client:visible />
+  <WhyChooseUs client:visible />
+  <Testimonials client:visible />
+  <ArticleSection client:visible />
+  <FAQ client:visible />
+</BaseLayout>

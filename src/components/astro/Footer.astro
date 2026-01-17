@@ -1,0 +1,141 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gradient-to-br from-neutral-900 via-black to-neutral-900 text-white relative overflow-hidden">
+  <!-- Subtle background effect -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-blue/30 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <div class="grid md:grid-cols-4 gap-12 mb-16">
+      <div class="md:col-span-2">
+        <div class="text-3xl font-bold mb-4">
+          AG<span class="text-brand-blue">•</span>Varme
+        </div>
+        <p class="text-neutral-400 mb-6 max-w-md font-light leading-relaxed">
+          Profesjonell service og vedlikehold av oljefyringsanlegg. Over 15 års erfaring med døgnåpen service. Holder Norge varmt siden 2008.
+        </p>
+
+        <!-- Emergency Badge -->
+        <div class="inline-flex items-center gap-2 bg-brand-blue/10 backdrop-blur-sm border border-brand-blue/30 rounded-full px-5 py-2.5 mb-8 hover:bg-brand-blue/20 transition-all duration-300">
+          <svg class="w-4 h-4 text-brand-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span class="text-sm text-brand-blue font-medium">24/7 Akutthjelp tilgjengelig</span>
+        </div>
+
+        <div class="flex gap-3">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-11 h-11 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue hover:scale-110 transition-all duration-300"
+            aria-label="Facebook"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+            </svg>
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-11 h-11 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full flex items-center justify-center hover:bg-brand-blue hover:border-brand-blue hover:scale-110 transition-all duration-300"
+            aria-label="LinkedIn"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-6 text-lg">Tjenester</h3>
+        <ul class="space-y-3 text-neutral-400">
+          <li>
+            <a href="/tjenester" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-300 font-light">
+              Service og vedlikehold
+            </a>
+          </li>
+          <li>
+            <a href="/tjenester" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-300 font-light">
+              Tankbytte og sanering
+            </a>
+          </li>
+          <li>
+            <a href="/tjenester" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-300 font-light">
+              Biofyringsolje
+            </a>
+          </li>
+          <li>
+            <a href="/kontakt" class="hover:text-white hover:translate-x-1 inline-block transition-all duration-300 font-light">
+              Akuttreparasjon 24/7
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-6 text-lg">Kontakt oss</h3>
+        <ul class="space-y-4 text-neutral-400">
+          <li>
+            <a
+              href="tel:40213090"
+              class="flex items-center gap-2 hover:text-white transition-colors duration-300 group"
+            >
+              <svg class="w-4 h-4 text-brand-blue group-hover:text-brand-blue group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span class="font-light">40 21 30 90</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:post@agvarmeteknikk.no"
+              class="flex items-center gap-2 hover:text-white transition-colors duration-300 group"
+            >
+              <svg class="w-4 h-4 text-brand-blue group-hover:text-brand-blue group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span class="font-light">post@agvarmeteknikk.no</span>
+            </a>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-4 h-4 text-brand-blue mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="font-light">Oslo og Akershus<br />Norge</span>
+          </li>
+          <li class="flex items-start gap-2 pt-2">
+            <svg class="w-4 h-4 text-brand-blue mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div>
+              <div class="font-medium text-white">Åpningstider kontor:</div>
+              <div class="text-sm font-light">Man-Fre: 08:00-16:00</div>
+              <div class="text-sm text-brand-blue font-medium">Akutt: 24/7</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-neutral-500 text-sm font-light">
+        &copy; {currentYear} AG Varmeteknikk. Alle rettigheter reservert.
+      </p>
+      <div class="flex gap-8 text-neutral-500 text-sm">
+        <a href="/om-oss" class="hover:text-white transition-colors duration-300 font-light">Om oss</a>
+        <a href="/kontakt" class="hover:text-white transition-colors duration-300 font-light">Kontakt</a>
+        <a href="#" class="hover:text-white transition-colors duration-300 font-light">Personvern</a>
+      </div>
+    </div>
+  </div>
+</footer>

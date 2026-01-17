@@ -1,0 +1,51 @@
+---
+import '@/styles/global.css';
+import SEOHead from '@/components/astro/SEOHead.astro';
+import { Header } from '@/components/react/Header';
+import Footer from '@/components/astro/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogType?: string;
+  ogImage?: string;
+  structuredData?: object;
+}
+
+const {
+  title = 'AG Varmeteknikk - Oljefyrservice og Vedlikehold i Norge',
+  description = 'Spesialister på service, vedlikehold og oppgradering av oljefyringsanlegg. Over 15 års erfaring med døgnåpen service 24/7. Sertifisert og pålitelig.',
+  keywords = 'oljefyr, oljefyrservice, oljebrenner, vedlikehold, service, oppgradering, tankrensing, tankservice, biobrensel, AG Varmeteknikk, Norge',
+  ogType = 'website',
+  ogImage = '/og-image.jpg',
+  structuredData,
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <SEOHead
+      title={title}
+      description={description}
+      keywords={keywords}
+      ogType={ogType}
+      ogImage={ogImage}
+      structuredData={structuredData}
+    />
+  </head>
+  <body class="bg-background text-foreground antialiased">
+    <Header client:load currentPath={currentPath} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

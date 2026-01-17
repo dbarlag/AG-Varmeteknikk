@@ -1,0 +1,55 @@
+@import 'tailwindcss' source(none);
+@source '../**/*.{js,ts,jsx,tsx,astro}';
+
+/* Custom Brand Colors - AG Varmeteknikk */
+@theme {
+  /* Brand Navy - From logo, modernized */
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-navy-light: var(--brand-navy-light);
+  --color-brand-navy-dark: var(--brand-navy-dark);
+  
+  /* Brand Blue - Primary CTAs */
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-light: var(--brand-blue-light);
+  --color-brand-blue-dark: var(--brand-blue-dark);
+  
+  /* Accent Colors - Heat/Energy (from flame) */
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-orange-light: var(--accent-orange-light);
+  --color-accent-orange-dark: var(--accent-orange-dark);
+  --color-accent-red: var(--accent-red);
+  --color-accent-yellow: var(--accent-yellow);
+  
+  /* Neutral Scale */
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+  
+  /* Semantic Colors */
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-success-dark: var(--success-dark);
+  --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
+  --color-warning-dark: var(--warning-dark);
+  --color-error: var(--error);
+  --color-error-light: var(--error-light);
+  --color-error-dark: var(--error-dark);
+  --color-info: var(--info);
+  --color-info-light: var(--info-light);
+  --color-info-dark: var(--info-dark);
+  
+  /* Surface Colors */
+  --color-surface-white: var(--surface-white);
+  --color-surface-light: var(--surface-light);
+  --color-surface-mid: var(--surface-mid);
+  --color-surface-dark: var(--surface-dark);
+}

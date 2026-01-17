@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Contact } from '@/components/react/Contact';
+---
+
+<BaseLayout
+  title="Kontakt Oss - AG Varmeteknikk | Ring 40 21 30 90"
+  description="Ta kontakt med AG Varmeteknikk for service, vedlikehold og akutte reparasjoner. Vi er tilgjengelige døgnet rundt. Ring 40 21 30 90 eller send oss en melding."
+  keywords="kontakt AG Varmeteknikk, ring oljefyrservice, akutt service, 40 21 30 90, Norge"
+>
+  <div class="pt-24">
+    <Contact client:load />
+  </div>
+</BaseLayout>
